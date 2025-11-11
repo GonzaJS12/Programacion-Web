@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimus Print - Contacto</title>
+    <link rel="stylesheet" href="../PROYECTO-WEB/CSS/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../PROYECTO-WEB/imagen/logo.png" alt="Optimus Print Logo">
+        </div>
+        <nav>
+            <a href="INICIO.html" class="btn negro">INICIO</a>
+            <a href="SERVICIO.html" class="btn amarillo">SERVICIO</a>
+            <a href="DESCARGA.html" class="btn rojo">DESCARGA</a>
+            <a href="GALERIA.html" class="btn celeste">GALERIA</a> 
+            <a href="CONTACTO.html" class="btn blanco">CONTACTO</a> 
+        </nav>
+    </header>
+
+    <main class="vista-contacto">
+        <div class="contacto-grid">
+            
+            <div class="columna-formulario">
+                <form action="#" method="POST" class="contacto-form">
+                    <h1 class="titulo-contacto">Consultas</h1>
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn celeste btn-enviar">ENVIAR</button>
+                </form>
+            </div>
+            
+            <div class="columna-imagen">
+                <img src="../PROYECTO-WEB/imagen/IMAGEN-CONTACTO.png" alt="Técnico reparando equipo" class="imagen-contacto">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="info">
+            <p>
+                Direccion: Alvear 686<br>
+                Salta - Capital<br>
+                Argentina
+            </p>
+        </div>
+
+        <div class="social">
+            <a href="https://www.facebook.com/optimusprint.salta" target="_blank">  
+                <img src="../PROYECTO-WEB/imagen/logo-facebook.png" alt="Facebook" class="icono">
+            </a>
+            <span>OptimusPrint.Salta</span>
+        </div>
+
+        <div class="contacto">
+            <div class="whatsapp">
+                <img src="../PROYECTO-WEB/imagen/logo-wap.png" alt="WhatsApp">
+                <span>+54 387 623 4844</span>
+            </div>
+            <p>optimusprint.salta@gmail.com</p>
+            <p>Copyright © 2015–2025</p>
+        </div>
+    </footer>
+</body>
+</html>
