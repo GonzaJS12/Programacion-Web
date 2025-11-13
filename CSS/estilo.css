@@ -9,6 +9,7 @@ body {
   font-family: 'Patrick Hand', cursive;
   color: #000;
 }
+
 html, body {
   height: 100%;
   margin: 0;
@@ -340,7 +341,7 @@ footer p {
   }
 
   .texto-largo {
-  padding: 15px;
+    padding: 15px;
   }
 }
 
@@ -456,6 +457,7 @@ footer p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 350px;
 }
 
 .btn-recuadro-venta {
@@ -480,6 +482,9 @@ footer p {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
 }
 
+/* --- ESTILOS DE LA COLUMNA DE VENTA SIN CARRUSEL (BORRAR SI SOLO USAS CARRUSEL) --- */
+/* Esta sección fue la que entró en conflicto con el carrusel, ya que tenía padding y centrado simple */
+/*
 .imagen-contenedor-carrusel {
     background-color: #fff;
     width: 100%;
@@ -499,6 +504,80 @@ footer p {
     object-fit: contain;
     transition: transform 0.5s ease;
 }
+*/
+/* ---------------------------------------------------------------------------------- */
+
+
+/* ======================================= */
+/* --- AJUSTE DE COLUMNA Y CARRUSEL (ESTOS SON LOS ESTILOS CORRECTOS A USAR) --- */
+/* ======================================= */
+
+/* 1. Contenedor externo que da el tamaño (TU CLASE ORIGINAL) */
+.imagen-contenedor-carrusel {
+    background-color: #fff;
+    width: 100%;
+    height: 350px; /* <--- Esto define la altura */
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 0; 
+    overflow: hidden; 
+    position: relative; /* <--- Esto posiciona los botones */
+}
+
+/* 2. Contenedor interno que maneja el carrusel (Contiene el track) */
+.carousel-container {
+    position: relative; 
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+    display: flex;
+    align-items: center;
+}
+
+/* 3. Contenedor de las imágenes que se desplazan */
+.carousel-track-container {
+    flex-grow: 1; 
+    overflow: hidden;
+    height: 100%;
+}
+
+.carousel-track {
+    display: flex; /* Crucial: pone las imágenes en línea */
+    transition: transform 0.5s ease-in-out; /* Animación de deslizamiento */
+    height: 100%; 
+    /* El ancho es controlado por JS */
+}
+
+.carousel-image {
+    min-width: 100%; /* CADA IMAGEN ocupa el 100% del ancho del track-container */
+    height: 100%;
+    object-fit: contain; 
+    display: block; 
+}
+
+/* 4. Estilo de los botones de navegación */
+.carousel-button {
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 8px;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
 
 /* ======================================= */
 /* --- VISTA CONTACTO (DISEÑO GRID/2 COLUMNAS) --- */
@@ -625,66 +704,6 @@ footer p {
 
 
 /* ======================================= */
-/* --- RESPONSIVE DE LAS VISTAS (Media Queries) --- */
-/* ======================================= */
-
-/* Ajustes para tabletas (900px) */
-@media (max-width: 900px) {
-/* Ajustes generales de header/servicios que ya tenías... */
-    .ventas-grid {
-        gap: 20px;
-    }
-    .btn-recuadro-venta {
-        font-size: 1.2em;
-        padding: 12px 10px;
-    }
-    .imagen-contenedor-carrusel {
-        height: 250px; 
-    }
-}
-
-/* Ajustes para móviles (768px y menos) */
-@media (max-width: 768px) {
-/* --- VISTA SERIE RESPONSIVE --- */
-    .series-content {
-    padding: 30px 10px;
-    }
-    .series-title-container {
-        width: 80%;
-        margin-bottom: 30px;
-    }
-    .series-title {
-        font-size: 36px;
-    }
-    .series-buttons-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .series-button {
-        width: 80%;
-        max-width: 300px;
-        height: 250px;
-        font-size: 60px;
-    }
-/* --- VISTA VENTAS RESPONSIVE --- */
-    .vista-ventas {
-        padding: 30px 3%;
-    }
-    .ventas-grid {
-        flex-direction: column; 
-        gap: 30px;
-    }
-    .columna-venta {
-        flex: 1 1 100%; 
-    }
-    .imagen-contenedor-carrusel {
-        height: 280px;
-    }
-    .btn-recuadro-venta {
-     font-size: 1.4em;
-   }
-}
-/* ======================================= */
 /* --- VISTA MODELOS (SERIE_XP.HTML) --- */
 /* ======================================= */
 
@@ -809,6 +828,70 @@ footer p {
     border: none; 
     cursor: pointer;
 }
+/* ======================================= */
+/* --- RESPONSIVE DE LAS VISTAS (Media Queries) --- */
+/* ======================================= */
+
+/* Ajustes para tabletas (900px) */
+@media (max-width: 900px) {
+/* Ajustes generales de header/servicios que ya tenías... */
+    .ventas-grid {
+        gap: 20px;
+    }
+    .btn-recuadro-venta {
+        font-size: 1.2em;
+        padding: 12px 10px;
+    }
+    /* AJUSTE RESPONSIVE DEL CARRUSEL EN VISTA VENTAS */
+    .imagen-contenedor-carrusel {
+        height: 250px; 
+    }
+}
+
+/* Ajustes para móviles (768px y menos) */
+@media (max-width: 768px) {
+/* --- VISTA SERIE RESPONSIVE --- */
+    .series-content {
+    padding: 30px 10px;
+    }
+    .series-title-container {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+    .series-title {
+        font-size: 36px;
+    }
+    .series-buttons-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .series-button {
+        width: 80%;
+        max-width: 300px;
+        height: 250px;
+        font-size: 60px;
+    }
+/* --- VISTA VENTAS RESPONSIVE --- */
+    .vista-ventas {
+        padding: 30px 3%;
+    }
+    .ventas-grid {
+        flex-direction: column; 
+        gap: 30px;
+    }
+    .columna-venta {
+        flex: 1 1 100%; 
+    }
+    /* AJUSTE RESPONSIVE DEL CARRUSEL EN VISTA VENTAS */
+    .imagen-contenedor-carrusel {
+        height: 280px;
+    }
+    .btn-recuadro-venta {
+      font-size: 1.4em;
+    }
+/* --- VISTA CONTACTO RESPONSIVE (Bloque ya corregido) --- */
+}
+
 /* --- Responsive para la Vista de Modelos --- */
 @media (max-width: 950px) {
     /* Pasa a 4 columnas */
@@ -828,6 +911,20 @@ footer p {
         font-size: 1.3em;
         height: 50px;
     }
+    /* Ajustes para la vista de descarga en móviles */
+    .descarga-body {
+        padding: 30px 30px;
+    }
+    .product-title {
+        font-size: 2em;
+    }
+    .download-item-title {
+        font-size: 1.8em;
+    }
+    .btn-descargar {
+        width: 150px;
+        padding: 12px 0;
+    }
 }
 
 @media (max-width: 500px) {
@@ -843,22 +940,5 @@ footer p {
     /* Escondemos los elementos vacíos en el móvil para limpiar el layout */
     .modelo-vacio {
         display: none; 
-    }
-}
-@media (max-width: 768px) {
-    @media (max-width: 700px) {
-        .descarga-body {
-            padding: 30px 30px;
-        }
-        .product-title {
-            font-size: 2em;
-        }
-        .download-item-title {
-            font-size: 1.8em;
-        }
-        .btn-descargar {
-            width: 150px;
-            padding: 12px 0;
-        }
     }
 }
