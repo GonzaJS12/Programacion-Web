@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Optimus Print - Serie XP</title>
+    <title>Optimus Print - Contacto</title>
     <link rel="stylesheet" href="CSS/estilo.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Patrick+Hand&display=swap" rel="stylesheet">
 </head>
@@ -21,37 +21,31 @@
         </nav>
     </header>
 
-    <main class="series-content">
-        <h1 class="titulo-servicio">Serie L</h1>
-        <div class="modelos-grid">
+    <main class="vista-descarga">
+        <div class="descarga-card">
             
-            <a href="#" class="btn-modelo negro">L 120</a>
-            <a href="#" class="btn-modelo negro">L 121</a>
-            <a href="#" class="btn-modelo negro">L 210</a>
-            <a href="#" class="btn-modelo negro">L 220</a>
-            <a href="#" class="btn-modelo negro">L 355</a>
+            <div class="descarga-header">
+                <h1 class="product-title">EPSON L 3110</h1>
+            </div>
             
-            <a href="#" class="btn-modelo negro">L 360</a>
-            <a href="#" class="btn-modelo negro">L 365</a>
-            <a href="#" class="btn-modelo negro">L 375</a>
-            <a href="#" class="btn-modelo negro">L 380</a>
-            <a href="#" class="btn-modelo negro">L 395</a>
-
-            <a href="DESCARGA-L-3110.html" class="btn-modelo negro">L 3110</a> 
-            <a href="#" class="btn-modelo negro">L 3150</a>
-            <a href="#" class="btn-modelo negro">L 3210</a>
-            <a href="#" class="btn-modelo negro">L 3250</a>
-            <a href="#" class="btn-modelo negro">L 4150</a>
-                        
-            <a href="#" class="btn-modelo negro">L 4160</a> 
-            <a href="#" class="btn-modelo negro">L 4360</a>
-            <a href="#" class="btn-modelo negro">L 5190</a>
-            <a href="#" class="btn-modelo negro">L 6370</a>
-            <a href="#" class="btn-modelo negro">L 8180</a>
+            <div class="descarga-body">
+                <form action="/handle-download" method="POST" class="descarga-form">
+                    
+                    <p class="download-item-title">Reset Almohadillas</p>
+                    
+                    <hr class="separator-line">
+                    
+                    <div class="form-group-download">
+                        <label for="password" class="password-label">Contraseña</label>
+                        <h1>OptimusPrint</h1> 
+                        <hr class="separator-line">
+                    </div>
+                    
+                    <button type="submit" class="btn-descargar negro">Descargar</button>
+                </form>
+            </div>
         </div>
-        
     </main>
-
     <footer>
         <div class="info">
             <p>
@@ -62,7 +56,7 @@
         </div>
 
         <div class="social">
-            <a href="https://www.facebook.com/optimusprint.salta" target="_blank">  
+            <a href="https://www.facebook.com/optimusprint.salta" target="_blank">  
                 <img src="imagen/logo-facebook.png" alt="Facebook" class="icono">
             </a>
             <span>OptimusPrint.Salta</span>

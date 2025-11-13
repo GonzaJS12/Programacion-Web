@@ -730,8 +730,85 @@ footer p {
     box-shadow: none !important;
     cursor: default;
 }
+/* ======================================= */
+/* --- VISTA DESCARGA (DESCARGA.HTML) --- */
+/* ======================================= */
 
+.vista-descarga {
+    /* Mantiene el fondo verde oscuro y centra el contenido principal */
+    background-color: #064b33;
+    padding: 50px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Usamos el min-height ya definido en main para ocupar el espacio */
+}
 
+.descarga-card {
+    width: 90%;
+    max-width: 600px;
+    background-color: #fff; /* Fondo de la tarjeta (principalmente blanco) */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border-radius: 5px; 
+    overflow: hidden; 
+}
+
+/* Encabezado oscuro del producto (EPSON XP-211) */
+.descarga-header {
+    background-color: #000;
+    padding: 30px 20px;
+    text-align: center;
+    color: #4CAF50; /* Un verde oscuro similar al de la imagen */
+}
+
+.product-title {
+    font-family: 'Times New Roman', Times, serif; 
+    font-size: 2.5em;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Cuerpo principal de la tarjeta (blanco) */
+.descarga-body {
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.download-item-title {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2.2em;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.descarga-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.separator-line {
+    border: none;
+    border-top: 1px solid #777; /* Línea gris para separar */
+    width: 100%;
+    margin: 10px 0;
+}
+
+.form-group-download {
+    width: 100%;
+    text-align: center;
+}
+.btn-descargar {
+    /* Reutilizamos .btn y .negro pero ajustamos el padding/tamaño */
+    width: 200px;
+    padding: 15px 0;
+    font-size: 1.2em;
+    margin-top: 25px;
+    border: none; 
+    cursor: pointer;
+}
 /* --- Responsive para la Vista de Modelos --- */
 @media (max-width: 950px) {
     /* Pasa a 4 columnas */
@@ -766,5 +843,22 @@ footer p {
     /* Escondemos los elementos vacíos en el móvil para limpiar el layout */
     .modelo-vacio {
         display: none; 
+    }
+}
+@media (max-width: 768px) {
+    @media (max-width: 700px) {
+        .descarga-body {
+            padding: 30px 30px;
+        }
+        .product-title {
+            font-size: 2em;
+        }
+        .download-item-title {
+            font-size: 1.8em;
+        }
+        .btn-descargar {
+            width: 150px;
+            padding: 12px 0;
+        }
     }
 }
