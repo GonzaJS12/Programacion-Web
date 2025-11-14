@@ -346,31 +346,56 @@ footer p {
 }
 
 @media (max-width: 500px) {
-  .btn {
-    padding: 8px 16px;
-    font-size: 0.9em;
-  }
+   header {
+       padding: 10px 5%;
+   }
 
-  .col h2 {
-    font-size: 1.5em;
-  }
+   .logo img {
+       width: 70px;
+       height: 70px;
+   }
 
-  .col p {
-    font-size: 1.1em;
-  }
+   nav {
+       gap: 5px;
+   }
 
-  .footer-copy {
-    font-size: 0.9em;
-  }
+   .btn {
+       padding: 6px 12px;
+       font-size: 0.8em;
+   }
 
-  .texto-largo {
-    padding: 10px;
-    font-size: 0.9em;
-  }
+   .col h2 {
+       font-size: 1.5em;
+   }
 
-  .titulo-servicio {
-    font-size: 1.8em;
-  }
+   .col p {
+       font-size: 1.1em;
+   }
+
+   footer {
+       padding: 15px 5%;
+   }
+
+   footer p {
+       font-size: 1.5em;
+   }
+
+   .whatsapp span {
+       font-size: 1.5em;
+   }
+
+   .footer-copy {
+       font-size: 0.9em;
+   }
+
+   .texto-largo {
+       padding: 10px;
+       font-size: 0.9em;
+   }
+
+   .titulo-servicio {
+       font-size: 1.8em;
+   }
 }
 /* ======================================= */
 /* --- VISTA SERIE (SERVICIO.HTML) --- */
@@ -481,37 +506,6 @@ footer p {
     transform: translateY(-2px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
 }
-
-/* --- ESTILOS DE LA COLUMNA DE VENTA SIN CARRUSEL (BORRAR SI SOLO USAS CARRUSEL) --- */
-/* Esta sección fue la que entró en conflicto con el carrusel, ya que tenía padding y centrado simple */
-/*
-.imagen-contenedor-carrusel {
-    background-color: #fff;
-    width: 100%;
-    height: 350px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 15px;
-}
-
-.imagen-carrusel {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    transition: transform 0.5s ease;
-}
-*/
-/* ---------------------------------------------------------------------------------- */
-
-
-/* ======================================= */
-/* --- AJUSTE DE COLUMNA Y CARRUSEL (ESTOS SON LOS ESTILOS CORRECTOS A USAR) --- */
-/* ======================================= */
-
 /* 1. Contenedor externo que da el tamaño (TU CLASE ORIGINAL) */
 .imagen-contenedor-carrusel {
     background-color: #fff;
@@ -685,7 +679,7 @@ footer p {
     .columna-formulario, .columna-imagen {
         flex: auto; /* Permite que ambos ocupen su espacio de forma natural */
     }
-    
+
     .titulo-contacto {
         text-align: center;
         margin-bottom: 15px;
@@ -696,9 +690,36 @@ footer p {
         max-width: 300px;
         align-self: center; /* Centra el botón en móvil */
     }
-    
+
     .imagen-contacto {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .vista-contacto {
+        padding: 30px 3%;
+        min-height: auto;
+    }
+
+    .titulo-contacto {
+        font-size: 2em;
+    }
+
+    .form-group label {
+        font-size: 1.3em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .btn-enviar {
+        width: 100%;
+        padding: 12px;
+        font-size: 1em;
     }
 }
 
@@ -889,7 +910,7 @@ footer p {
     .btn-recuadro-venta {
       font-size: 1.4em;
     }
-/* --- VISTA CONTACTO RESPONSIVE (Bloque ya corregido) --- */
+
 }
 
 /* --- Responsive para la Vista de Modelos --- */
